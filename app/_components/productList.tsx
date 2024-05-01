@@ -9,6 +9,13 @@ const ProductList = async () => {
       },
     },
     take: 10,
+    include: {
+      restaurant: {
+        select: {
+          name: true,
+        },
+      },
+    },
   });
   return (
     <div className=" flex gap-4 overflow-x-scroll px-6 [&::-webkit-scrollbar]:hidden">
